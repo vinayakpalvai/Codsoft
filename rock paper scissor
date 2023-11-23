@@ -1,0 +1,33 @@
+import random
+n=1
+a=0
+b=0
+opt=["rock","paper","scissor"]
+while n:
+    user=input("enter your choice (rock or paper or scissor): ")
+    computer=opt[random.randint(0,2)]
+    print("computer choice is {}".format(computer))
+    if user==computer:
+        print("tie")
+        a+=1
+        b+=1
+    if user=="rock" and computer=="paper":
+        print("computer wons the match")
+        b+=1
+    if user=="rock" and computer=="scissor":
+        print("you won the match")
+        a+=1
+    if user=="paper" and computer=="scissor":
+        print("computer won the match")
+        b+=1
+    if user=="paper" and computer=="rock":
+        print("you won the match")
+        a+=1
+    if user=="scissor" and computer=="paper":
+        print("you won the match")
+        a+=1
+    if user=="scissor" and computer=="rock":
+        print("computer won the match")
+        b+=1
+    n=int(input("if you are intrested to play again enter 1 else enter 0 to stop tha game:  "))
+print("final result is you won {} timeas and computer won {} times".format(a,b))
