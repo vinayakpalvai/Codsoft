@@ -1,0 +1,79 @@
+class contact:
+    def __init__(self,name,phone_no,email,address):
+        self.name=name
+        self.phone_no=phone_no
+        self.email=email
+        self.address=address
+
+students=[]
+for i in range(60):
+    students.append(int(i))
+
+def add_contact(count):
+    print("enter your details  ")
+    name=input("enter your name:    ")
+    phone_no=int(input("enter your number:  "))
+    email=input("enter your emailid:    ")
+    address=input("address:    ")
+    students[count]=contact(name,phone_no,email,address)
+
+def display():
+    if count==0:
+        print("there are no contacts in your phone")
+    else:
+        for i in range(count+1):
+            print("Name: {}".format(students[i].name))
+            print("Phone_no: {}".format(students[i].phone_no))
+            print("Email: {}".format(students[i].email))
+            print("Address: {}".format(students[i].address))
+            print(" ")
+        
+def search(count):
+    key=input("enter the name to search:    ")
+    for i in range(count+1):
+        if students[i].name==key:
+            print("Name: {}".format(students[i].name))
+            print("Phone_no: {}".format(students[i].phone_no))
+            print("Email: {}".format(students[i].email))
+            print("Address: {}".format(students[i].address))
+            print(" ")
+
+def update(count):
+    key=input("enter the contact name to update the details:    ")
+    for i in range(count+1):
+        if students[i].name==key:
+            students[i].phone_no=int(input("enter the updated number:   "))
+            students[i].email=input("enter updated email:   ")
+            students[i].address=input("enter updated Adderess:   ")
+    print("{} details are updated succesfully".format(key))
+def delete(count):
+    key=input("enter the contact name to delete:    ")
+    for i in range(count+1):
+        if students[i].name==key:
+            students[i]=contact("-","-","-","-")
+   
+n=1
+count=-1
+while n!=0:
+    print("0 for exit")
+    print("1 for add Contact")
+    print("2 for display contact")
+    print("3 for search contact")
+    print("4 for update contact")
+    print("5 for delete contact")
+    n=int(input("enter your choice    "))
+    if n==0:
+        print("         your program executed succesfully")
+        exit(0)
+    if n==1:
+        count+=1
+        add_contact(count)
+    if n==2:
+        display()
+    if n==3:
+        search(count)
+    if n==4:
+        update(count)
+    if n==5:
+        delete(count)
+        
